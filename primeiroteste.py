@@ -8,8 +8,11 @@ cursor.execute("""CREATE TABLE usuarios (
                nome TEXT,
                senha INTEGER
                )""")
-cursor.execute("CREATE INDEX numero ON usuarios(1)")
-cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (?, ?)", ("henrique", 1234))
+
+cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (?, ?)",
+               ("henrique", 1234))
+cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (?, ?)",
+               ("chico bento", 1621))
 cursor.execute("SELECT nome, senha FROM usuarios")
 registros = cursor.fetchall()
 
